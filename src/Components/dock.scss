@@ -1,10 +1,10 @@
 .dock {
   position: fixed;
-  bottom: 1rem;
+  bottom: 0.5rem;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
-  gap: 0.75rem;
+  gap: 0.5rem;
   padding: 0.5rem 1rem;
   background: rgba(102, 102, 102, 0.637);
   padding-inline: 1rem;
@@ -13,8 +13,8 @@
   backdrop-filter: blur(5px);
 
   .icon {
-    width: 43px;
-    height: 43px;
+    width: 35px;
+    height: 35px;
     border-radius: 0.5rem;
     display: flex;
     justify-content: center;
@@ -22,13 +22,14 @@
     cursor: pointer;
     transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     aspect-ratio: 1/1;
+    padding: 2px;
 
-    img {
-      border-radius: 10px;
-      width: 3.75rem;
-      height: 100%;
-      object-fit: cover;
-    }
+    // img {
+    //   border-radius: 10px;
+    //   width: 3.75rem;
+    //   height: 100%;
+    //   object-fit: cover;
+    // }
 
   }
 
@@ -40,11 +41,13 @@
     .icon:has(+.icon:hover){
         transform: scale(1.1) translateY(-10%);
     }
-  .github,
+  .github{
+   background-color: black;
+  } 
   .cli{
-    background-color: #fff;
+    background-color: black;
   }
-  .notebook{
+  .booklet{
     background: linear-gradient(to bottom,rgb(255,179,87),rgb(255,153,28));
   }
   .pdf{

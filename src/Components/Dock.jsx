@@ -1,32 +1,30 @@
 import React from 'react'
 import "./dock.scss"
+import { 
+  RiGithubFill,
+  RiBookletFill,
+  RiFileEditFill,
+  RiCalendarLine,
+  RiSpotifyFill,
+  RiMailFill,
+  RiLinksLine,
+  RiTerminalFill,
+ } from '@remixicon/react'
 
 const Dock = () => {
   return (
     <div>
      <footer className="dock">
-   
-        <img className='icon github' src="/Doc-icons/github-fill.svg" alt="GitHub" />
 
-
-        <img className="icon notebook" src="/Doc-icons/booklet-fill.png" alt="Notebook" />
-
-        <img className="icon pdf" src="/Doc-icons/file-pdf-2-line.png" alt="PDF" />
-
-
-        <img className="icon calendar" src="/Doc-icons/calendar-2-line.png" alt="Calendar" />
-
-
-        <img className="icon spotify" src="/Doc-icons/spotify-fill.png" alt="Spotify" />
-
-
-        <img className="icon mail" src="/Doc-icons/mail-fill.png" alt="Mail" />
-
-        <img className="icon link" src="/Doc-icons/links-fill.png" alt="Link" />
-
-
-        <img className="icon cli" src="/Doc-icons/terminal-box-fill.png" alt="cli" />
-
+      {/* <RiGithubFill className="icon github" /> */}
+      <RiGithubFill className='icon github' color='white' />
+      <RiBookletFill className='icon booklet' color='white' />
+      <RiFileEditFill className='icon  pdf' color='white' />
+      <RiCalendarLine className='icon calendar' color="rgba(255,255,255,1)" />
+      <RiSpotifyFill className='icon spotify' color="rgba(255,255,255,1)" />
+      <RiMailFill className='icon mail' color="rgba(255,255,255,1)" />
+      <RiLinksLine className='icon link' color="rgba(255,255,255,1)" />
+      <RiTerminalFill className='icon cli' color="rgba(255,255,255,1)" />
     </footer>
     </div>
   )
