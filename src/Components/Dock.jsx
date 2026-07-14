@@ -12,7 +12,7 @@ import {
  } from '@remixicon/react'
 
 const Dock = () => {
-  return (compla
+  return (
     <div>
      <footer className="dock">
 
@@ -28,6 +28,6 @@ const Dock = () => {
     </footer>
     </div>
   )
+  
 }
-
-export default Dock
+  export default Dock
