@@ -12,7 +12,7 @@ import {
  } from '@remixicon/react'
 
 const Dock = () => {
-  return (
+  return (compla
     <div>
      <footer className="dock">
 
