@@ -1,33 +1,37 @@
 import React from 'react'
 import "./dock.scss"
-import { 
-  RiGithubFill,
-  RiBookletFill,
-  RiFileEditFill,
-  RiCalendarLine,
-  RiSpotifyFill,
-  RiMailFill,
-  RiLinksLine,
-  RiTerminalFill,
- } from '@remixicon/react'
 
-const Dock = () => {
-  return (
-    <div>
-     <footer className="dock">
-
-      {/* <RiGithubFill className="icon github" /> */}
-      <RiGithubFill className='icon github' color='white' />
-      <RiBookletFill className='icon booklet' color='white' />
-      <RiFileEditFill className='icon  pdf' color='white' />
-      <RiCalendarLine className='icon calendar' color="rgba(255,255,255,1)" />
-      <RiSpotifyFill className='icon spotify' color="rgba(255,255,255,1)" />
-      <RiMailFill className='icon mail' color="rgba(255,255,255,1)" />
-      <RiLinksLine className='icon link' color="rgba(255,255,255,1)" />
-      <RiTerminalFill className='icon cli' color="rgba(255,255,255,1)" />
-    </footer>
-    </div>
-  )
-  
+const Dock = ({ windowsState, setWindowsState }) => {
+    return (
+        <footer className='dock' >
+            <div
+                onClick={() => { setWindowsState(state => ({ ...state, github: true })) }}
+                className="icon github"><img src="/doc-icons/github.svg" alt="" /></div>
+            <div
+                onClick={() => { setWindowsState(state => ({ ...state, note: true })) }}
+                className="icon note"><img src="/doc-icons/note.svg" alt="" /></div>
+            <div
+                onClick={() => { setWindowsState(state => ({ ...state, resume: true })) }}
+                className="icon pdf"><img src="/doc-icons/pdf.svg" alt="" /></div>
+            <div
+                onClick={()=>{window.open("https://calendar.google.com/","_blank")}}
+            
+             className="icon calender"><img src="/doc-icons/calender.svg" alt="" /></div>
+            <div
+                onClick={() => { setWindowsState(state => ({ ...state, spotify: true })) }}
+                className="icon spotify"><img src="/doc-icons/spotify.svg" alt="" /></div>
+            <div
+            onClick={()=>{window.open("mailto:ankur@example.com","_blank")}}
+             className="icon mail"><img src="/doc-icons/mail.svg" alt="" /></div>
+            <div 
+            onClick={()=>{window.open("https://www.linkedin.com/in/ankit-kumar-a0b75b377/","_blank")}}
+            
+            className="icon link"><img src="/doc-icons/link.svg" alt="" /></div>
+            <div
+                onClick={() => { setWindowsState(state => ({ ...state, cli: true })) }}
+                className="icon cli"><img src="/doc-icons/cli.svg" alt="" /></div>
+        </footer>
+    )
 }
-  export default Dock
+
+export default Dock

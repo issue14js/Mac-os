@@ -1,30 +1,32 @@
-import { useEffect, useState } from 'react'
+import React, { useState, useEffect } from 'react'
 
 const DateTime = () => {
-  const [currentDateTime, setCurrentDateTime] = useState('')
+  const [dateTime, setDateTime] = useState('')
 
   useEffect(() => {
     const updateDateTime = () => {
       const now = new Date()
-      const day = now.toLocaleDateString('en-US', { weekday: 'short' })
-      const month = now.toLocaleDateString('en-US', { month: 'short' }).toLowerCase()
-      const date = now.getDate()
-      const hours = now.getHours()
-      const minutes = String(now.getMinutes()).padStart(2, '0')
-      const hour12 = hours % 12 || 12
-      const suffix = hours >= 12 ? 'pm' : 'am'
-      const time = `${hour12}:${minutes} ${suffix}`
-
-      setCurrentDateTime(`${day} ${month} ${date} ${time}`)
+      const formattedDateTime = now.toLocaleString('en-US', {
+        weekday: 'short',
+        month: 'short',
+        day: 'numeric',
+        hour: 'numeric',
+        minute: '2-digit',
+        hour12: true
+      }).toLowerCase().replace(/,/g, '')
+      
+      setDateTime(formattedDateTime)
     }
 
     updateDateTime()
-    const intervalId = window.setInterval(updateDateTime, 60000)
+    const interval = setInterval(updateDateTime, 1000)
 
-    return () => window.clearInterval(intervalId)
+    return () => clearInterval(interval)
   }, [])
 
-  return <div>{currentDateTime}</div>
+  return (
+    <div>{dateTime}</div>
+  )
 }
 
 export default DateTime
